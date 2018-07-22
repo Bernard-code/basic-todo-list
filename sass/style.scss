@@ -1,0 +1,127 @@
+
+@import 'partials/mixins';
+
+*{
+    font-size:10px;
+    font-family: 'Ubuntu Mono', monospace;
+}
+body{
+    margin:0;
+    padding:0;
+}
+.container{
+    background:#dbdbdb;
+    border-radius:15px;
+    padding:10px;
+    margin:10px auto;
+    width:1100px;
+
+}
+.mainHead{
+    font-size:3rem;
+    text-align:center;
+}
+.mainLine{
+    width:20%;
+    margin:0 auto 20px auto;
+    background:#3daeff;
+    border:none;
+    height:3px;
+}
+.addHead{
+    width:650px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:40px;
+}
+#addTask{
+    font-size:1.8rem;
+    width:calc(100% - 30px);
+    padding:10px 15px;
+    height:50px;
+    border:none;
+    text-align:center;
+}
+#addButton{
+    width:100%;
+    height:50px;
+
+    background:#0b5a93;
+    fill:#fff;
+    padding:10px 15px;
+    border:none;
+    cursor:pointer;
+
+    @include animate(background, 320ms);
+
+    &:hover,
+    &:focus{
+        background:#167ec8;
+    }
+}
+.flex{
+    display:flex;
+
+    .flexBox{
+        flex:1;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .flex{
+        flex-direction:column;
+    }
+}
+
+#tasks, #doneTasks{
+    list-style:none;
+    padding:10px;
+
+    li{
+        width:calc(100% - 40px);
+        background:#fff;
+        margin-bottom:15px;
+        height:30px;
+        font-size:2rem;
+        padding:5px 10px;
+
+        .buttons{
+            float:right;
+
+            button{
+                height:30px;
+                display:inline;
+                fill:#212121;
+                cursor:pointer;
+
+                @include animate(fill, 320ms);
+
+                &.remove{
+                    padding-left:15px;
+                    &:hover{
+                        fill:#d01515;
+                    }
+                }
+                &.check:hover{
+                    fill:#15d017;
+                }
+
+
+                padding:0;
+                border:none;
+                background:transparent;
+
+            }
+        }
+    }
+
+}
+#tasks{
+
+
+}
+#doneTasks{
+    li .buttons button.check{
+        fill:#3daeff;
+    }
+}
