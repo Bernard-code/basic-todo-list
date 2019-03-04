@@ -6,10 +6,10 @@
 body {
   margin: 0;
   padding: 0;
+  background: #dbdbdb;
 }
 
 .container {
-  background: #dbdbdb;
   border-radius: 15px;
   padding: 10px;
   margin: 10px auto;
